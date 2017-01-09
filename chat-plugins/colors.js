@@ -16,7 +16,7 @@ Gold.reloadCSS = function () {
 	let options = {
 		host: 'play.pokemonshowdown.com',
 		port: 80,
-		path: '/customcss.php?server=gold',
+		path: '/customcss.php',
 		method: 'GET',
 	};
 	http.get(options);
