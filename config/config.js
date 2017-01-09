@@ -86,7 +86,7 @@ exports.reportbattles = true;
 // report joins and leaves in battle - shows messages like "<USERNAME> joined" in battle
 //   Set this to false on large tournament servers where battles get a lot of joins and leaves.
 //   Note that the feature of turning this off is deprecated.
-exports.reportbattlejoins = true;
+exports.reportbattlejoins = false;
 
 // notify staff when users have a certain amount of room punishments.
 //   Setting this to a number greater than zero will notify staff for everyone with
@@ -120,7 +120,7 @@ exports.pmmodchat = false;
 // forced timer - force the timer on for all battles
 //   Players will be unable to turn it off.
 //   This setting can also be turned on with the command /forcetimer.
-exports.forcetimer = false;
+exports.forcetimer = true;
 
 // backdoor - allows Pokemon Showdown system operators to provide technical
 //            support for your server
@@ -177,17 +177,20 @@ exports.inactiveuserthreshold = 1000 * 60 * 60;
 // Users must be specified as userids -- that is, you must make the name all
 // lowercase and remove non-alphanumeric characters.
 //
-// Your server is registered... use avatars as you wish...
+// All servers are registered. Using are dns so you can use avatars as you wish
 exports.customavatars = {
 	//'userid': 'customavatar.png'
 };
+
+// custom avatars appear in profile by specifiying server url.
+exports.avatarurl = 'main.pokemon-world.online';
 
 // tourroom - specify a room to receive tournament announcements (defaults to
 // the room 'tournaments').
 // tourannouncements - announcements are only allowed in these rooms
 // tourdefaultplayercap - a set cap of how many players can be in a tournament
 // ratedtours - toggles tournaments being ladder rated (true) or not (false)
-exports.tourroom = '';
+exports.tourroom = 'Tournaments';
 exports.tourannouncements = [/* roomids */];
 exports.tourdefaultplayercap = 0;
 exports.ratedtours = false;
@@ -195,7 +198,7 @@ exports.ratedtours = false;
 // appealurl - specify a URL containing information on how users can appeal
 // disciplinary actions on your section. You can also leave this blank, in
 // which case users won't be given any information on how to appeal.
-exports.appealurl = '';
+exports.appealurl = 'You are banned!';
 
 // replsocketprefix - the prefix for the repl sockets to be listening on
 // replsocketmode - the file mode bits to use for the repl sockets

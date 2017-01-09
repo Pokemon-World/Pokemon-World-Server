@@ -1,13 +1,3 @@
-/**
- * Data searching commands.
- * Pokemon Showdown - http://pokemonshowdown.com/
- *
- * Commands for advanced searching for pokemon, moves, items and learnsets.
- * These commands run on a child process by default.
- *
- * @license MIT license
- */
-
 'use strict';
 
 const ProcessManager = require('./../process-manager');

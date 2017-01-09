@@ -1,11 +1,8 @@
-// Mafia chat plugin.
-// By bumbadadabum, with input from Zarel and art by crobat.
-
 'use strict';
 
 let MafiaData = require('./mafia-data');
 
-const deadImage = '<img width="75" height="75" src="//play.pokemonshowdown.com/fx/mafia-dead.png" />';
+const deadImage = '<img width="75" height="75" src="//main.pokemon-world.online/fx/mafia-dead.png" />';
 const meetingMsg = {town: 'The town has lynched a suspect!', mafia: 'The mafia strikes again!'};
 
 const defaultSettings = {anonVotes: false, allowWills: false, autoModchat: false};

@@ -1,12 +1,3 @@
-/**
- * Room settings commands
- * Pokemon Showdown - http://pokemonshowdown.com/
- *
- * Commands for settings relating to room setting filtering.
- *
- * @license MIT license
- */
-
 'use strict';
 
 const RANKS = Config.groupsranking;

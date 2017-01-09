@@ -1,15 +1,3 @@
-/**
- * Informational Commands
- * Pokemon Showdown - https://pokemonshowdown.com/
- *
- * These are informational commands. For instance, you can define the command
- * 'whois' here, then use it by typing /whois into Pokemon Showdown.
- *
- * For the API, see chat-plugins/COMMANDS.md
- *
- * @license MIT license
- */
-
 'use strict';
 
 const path = require('path');
@@ -475,8 +463,8 @@ exports.commands = {
 				return '<font color="#686868">' + detail + ':</font> ' + details[detail];
 			}).join("&nbsp;|&ThickSpace;") + '</font>';
 
-			if (isSnatch) buffer += '&nbsp;|&ThickSpace;<a href="https://pokemonshowdown.com/dex/moves/snatch"><font size="1">Snatchable Moves</font></a>';
-			if (isMirrorMove) buffer += '&nbsp;|&ThickSpace;<a href="https://pokemonshowdown.com/dex/moves/mirrormove"><font size="1">Mirrorable Moves</font></a>';
+			if (isSnatch) buffer += '&nbsp;|&ThickSpace;<a href="https://pokemon-world.online/dex/moves/snatch"><font size="1">Snatchable Moves</font></a>';
+			if (isMirrorMove) buffer += '&nbsp;|&ThickSpace;<a href="https://pokemon-world.online/dex/moves/mirrormove"><font size="1">Mirrorable Moves</font></a>';
 		}
 		this.sendReply(buffer);
 	},
@@ -743,7 +731,7 @@ exports.commands = {
 			let buffer = '<div class="scrollable"><table cellpadding="1" width="100%"><tr><th></th>';
 			let icon = {};
 			for (let type in Tools.data.TypeChart) {
-				icon[type] = '<img src="https://play.pokemonshowdown.com/sprites/types/' + type + '.png" width="32" height="14">';
+				icon[type] = '<img src="https://main.pokemon-world.online/sprites/types/' + type + '.png" width="32" height="14">';
 				// row of icons at top
 				buffer += '<th>' + icon[type] + '</th>';
 			}
@@ -1164,8 +1152,8 @@ exports.commands = {
 	calc: function (target, room, user) {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox(
-			"Pok&eacute;mon Showdown! damage calculator. (Courtesy of Honko)<br />" +
-			"- <a href=\"https://pokemonshowdown.com/damagecalc/\">Damage Calculator</a>"
+			"Pok&eacute;mon World! damage calculator. (Courtesy of Honko)<br />" +
+			"- <a href=\"https://pokemon-world.online/damagecalc/\">Damage Calculator</a>"
 		);
 	},
 	calchelp: ["/calc - Provides a link to a damage calculator",
@@ -1193,8 +1181,8 @@ exports.commands = {
 			"NEXT (also called Gen-NEXT) is a mod that makes changes to the game:<br />" +
 			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown/blob/master/mods/gennext/README.md\">README: overview of NEXT</a><br />" +
 			"Example replays:<br />" +
-			"- <a href=\"https://replay.pokemonshowdown.com/gennextou-120689854\">Zergo vs Mr Weegle Snarf</a><br />" +
-			"- <a href=\"https://replay.pokemonshowdown.com/gennextou-130756055\">NickMP vs Khalogie</a>"
+			"- <a href=\"https://replay.pokemon-world.online/gennextou-120689854\">Zergo vs Mr Weegle Snarf</a><br />" +
+			"- <a href=\"https://replay.pokemon-world.online/gennextou-130756055\">NickMP vs Khalogie</a>"
 		);
 	},
 
@@ -1405,7 +1393,7 @@ exports.commands = {
 			if (!this.runBroadcast()) return;
 			this.sendReplyBox("Please follow the rules:<br />" +
 				(room && room.rulesLink ? "- <a href=\"" + Chat.escapeHTML(room.rulesLink) + "\">" + Chat.escapeHTML(room.title) + " room rules</a><br />" : "") +
-				"- <a href=\"https://pokemonshowdown.com/rules\">" + (room && room.rulesLink ? "Global rules" : "Rules") + "</a>");
+				"- <a href=\"https://pokemon-world.online/rules\">" + (room && room.rulesLink ? "Global rules" : "Rules") + "</a>");
 			return;
 		}
 		if (!room) {
