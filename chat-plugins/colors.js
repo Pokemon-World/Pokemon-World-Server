@@ -12,6 +12,16 @@ function load() {
 }
 load();
 
+Gold.reloadCSS = function () {
+	let options = {
+		host: 'play.pokemonshowdown.com',
+		port: 80,
+		path: '/customcss.php?server=gold',
+		method: 'GET',
+	};
+	http.get(options);
+};
+
 function updateColor() {
 	fs.writeFileSync(filepath, JSON.stringify(customColors));
 
