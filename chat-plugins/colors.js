@@ -14,9 +14,9 @@ function load() {
 }
 load();
 
-reloadCSS = function () {
+function reloadCSS () {
 	let options = {
-		host: 'play.pokemonshowdown.com',
+		host: 'showdown.psim.online',
 		port: 80,
 		path: '/customcss.php',
 		method: 'GET',
