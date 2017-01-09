@@ -24,7 +24,7 @@
     "test": "eslint --rulesdir=dev-tools/eslint --cache *.js chat-plugins/ config/ data/ dev-tools/ mods/ tournaments/ test/ && mocha"
   },
   "bin": "./pokemon-world",
-  "homepage": "http://pokemon-world.online",
+  "homepage": "http://main.pokemon-world.online",
   "repository": {
     "type": "git",
     "url": "https://github.com/Pokemon-World/pokemon-world-server.git"
@@ -41,7 +41,7 @@
       "url": "https://"
     },
     {
-      "name": "Bill Meltsner",
+      "name": "Jana",
       "email": "",
       "url": "http://"
     }
