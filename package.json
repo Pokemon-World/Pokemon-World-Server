@@ -4,7 +4,8 @@
   "description": "The server for the Pokémon World online simulator",
   "version": "0.11.0",
   "dependencies": {
-    "sockjs": "0.3.18"
+    "sockjs": "0.3.18",
+	"md5": "*"
   },
   "optionalDependencies": {
     "cloud-env": "0.1.1",
