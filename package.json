@@ -27,7 +27,7 @@
   "homepage": "http://pokemon-world.online",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zarel/Pokemon-Showdown.git"
+    "url": "https://github.com/Pokemon-World/pokemon-world-server.git"
   },
   "author": {
     "name": "Adam Snowden",
