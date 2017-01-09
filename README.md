@@ -13,6 +13,7 @@ Requirements: 'Node.js command prompt' ~ https://nodejs.org/en/ ~ Download for W
 
 ( Step-2 ) Press Win + R (Win: 4 Flags Key Between Ctrl + Alt) and type cmd.exe in the Run Box
 > cd current_server_path (From Step-1)
+
 > npm install --server
 
 ( Step-3 ) Starting up your server on your end (localhost.psim.online) for local testing, Just search "what is my IP" for global IP.
