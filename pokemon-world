@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+'use strict';
+
+// Make sure we're Node 6+
+
+try {
+	eval('{ let [a] = [1]; }');
+} catch (e) {
+	console.log("We require Node.js v6.9.2 LTS " + process.version);
+	process.exit();
+}
+
+// Install dependencies...
+
+
+try {
+	require.resolve('sockjs');
+} catch (e) {
+	let command = 'npm install --dependencies';
+	console.log('Installing dependencies: `' + command + '`...');
+	require('child_process').spawnSync('sh', ['-c', command], {stdio: 'inherit'});
+}
+
+// start the server
+
+let port;
+if (process.argv[2]) {
+	port = parseInt(process.argv[2]);
+}
+require('./app').listen(port);
