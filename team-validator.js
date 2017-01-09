@@ -1,12 +1,3 @@
-/**
- * Team Validator
- * Pokemon World - http://pokemonshowdown.com/
- *
- * Handles team validation, and specifically learnset checking.
- *
- * @license MIT license
- */
-
 'use strict';
 
 let TeamValidator = module.exports = getValidator;
