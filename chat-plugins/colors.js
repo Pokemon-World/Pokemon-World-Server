@@ -107,8 +107,6 @@ exports.commands = {
 const MD5 = require('MD5');
 let colorCache = {};
 
-// Mains custom username colors
-// https://play.pokemonshowdown.com/js/config.js
 let mainCustomColors = {
 	'theimmortal': 'taco',
 	'bmelts': 'testmelts',
@@ -249,7 +247,7 @@ let mainCustomColors = {
 	'nv': 'larvitar',
 	'iyarito': 'gengarito',
 	'speks': 'goojna',
-	'cathy': '', //{color: '#ff5cb6'}
+	'cathy': '', 
 };
 
 // hashColor function
