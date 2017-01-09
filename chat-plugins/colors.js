@@ -3,6 +3,8 @@
 const filepath = 'config/customcolors.json';
 let customColors = {};
 const fs = require('fs');
+const http = require('http');
+
 
 function load() {
 	fs.readFile(filepath, 'utf8', function (err, file) {
@@ -12,7 +14,7 @@ function load() {
 }
 load();
 
-Gold.reloadCSS = function () {
+reloadCSS = function () {
 	let options = {
 		host: 'play.pokemonshowdown.com',
 		port: 80,
@@ -35,9 +37,8 @@ function updateColor() {
 	let file = fs.readFileSync('config/custom.css', 'utf8').split('\n');
 	if (~file.indexOf('/* COLORS START */')) file.splice(file.indexOf('/* COLORS START */'), (file.indexOf('/* COLORS END */') - file.indexOf('/* COLORS START */')) + 1);
 	fs.writeFileSync('config/custom.css', file.join('\n') + newCss);
-	Gold.reloadCSS();
+	reloadCSS();
 }
-Gold.updateColor = updateColor;
 
 function generateCSS(name, color) {
 	let css = '';
@@ -298,7 +299,6 @@ function hashColor(name) {
 	return colorCache[name];
 }
 exports.hashColor = hashColor;
-Gold.hashColor = hashColor;
 
 function hslToRgb(h, s, l) {
 	let r, g, b, m, c, x;
