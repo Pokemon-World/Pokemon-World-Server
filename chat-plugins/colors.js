@@ -247,7 +247,6 @@ let mainCustomColors = {
 	'nv': 'larvitar',
 	'iyarito': 'gengarito',
 	'speks': 'goojna',
-	'cathy': '', 
 };
 
 // hashColor function
