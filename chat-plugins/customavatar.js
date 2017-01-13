@@ -43,13 +43,13 @@ exports.commands = {
 			if (!this.can('forcewin')) return false;
 
 			const parts = target.split(',');
-			const userid = toId(target);
-			const userImage = Config.customavatars[userid];
 
 			if (parts.length < 2) return this.parse('/help customavatar');
-                        if (userImage) return this.errorReply(userid + " already has a custom avatar, Please delete the one which exists with '/customavatar delete, " + userid + "'.");
-			
 			const name = toId(parts[0]);
+
+			const userImage = Config.customavatars[name];
+			if (userImage) delete Config.customavatars[name];
+
 			let image_url = parts[1];
 			if (image_url.match(/^https?:\/\//i)) image_url = 'http://' + image_url;
 			const ext = path.extname(image_url);
