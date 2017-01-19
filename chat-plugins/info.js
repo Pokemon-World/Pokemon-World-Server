@@ -34,7 +34,7 @@ exports.commands = {
 			buf += `<br />Global ${Config.groups[targetUser.group].name} (${targetUser.group})`;
 		}
 		if (targetUser.isSysop) {
-			buf += `<br />(Pok&eacute;mon Showdown System Operator)`;
+			buf += `<br />(Pok&eacute;mon World Online System Operator)`;
 		}
 		if (!targetUser.registered) {
 			buf += `<br />(Unregistered)`;
