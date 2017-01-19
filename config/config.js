@@ -1,6 +1,6 @@
 'use strict';
 
-// The server port - the port to run Pokemon Showdown under
+// The server port - the port to run Pokemon World under
 exports.port = 8000;
 
 // proxyip - proxy IPs with trusted X-Forwarded-For headers
