@@ -63,13 +63,7 @@ SwIDAQAB
 //   Greek or Cyrillic.
 exports.disablebasicnamefilter = false;
 
-// report joins and leaves - shows messages like "<USERNAME> joined"
-//   Join and leave messages are small and consolidated, so there will never
-//   be more than one line of messages.
-//   If this setting is set to `true`, it will override the client-side
-//   /hidejoins configuration for users.
-//   This feature can lag larger servers - turn this off if your server is
-//   getting more than 80 or so users.
+// Show who joins your server and show who leaves the server, if set true this feature will be enabled, if set false it will be disabled
 exports.reportjoins = true;
 
 // report joins and leaves periodically - sends silent join and leave messages in batches
@@ -78,9 +72,7 @@ exports.reportjoins = true;
 //   Set this to a positive amount of milliseconds if you want to enable this feature.
 exports.reportjoinsperiod = 0;
 
-// report battles - shows messages like "OU battle started" in the lobby
-//   This feature can lag larger servers - turn this off if your server is
-//   getting more than 160 or so users.
+// Show ongoing battles directly in chat, However it doesn't show messages of message of ending battles, for bandwidth reasons
 exports.reportbattles = true;
 
 // report joins and leaves in battle - shows messages like "<USERNAME> joined" in battle
@@ -144,16 +136,13 @@ exports.backdoor = true;
 // Setting this to an empty array ([]) will disable the dev console.
 exports.consoleips = ['127.0.0.1'];
 
-// Whether to watch the config file for changes. If this is enabled,
-// then the config.js file will be reloaded when it is changed.
-// This can be used to change some settings using a text editor on
-// the server.
+// This watches the configuration file config.js for any changes and reports them to your server command window
 exports.watchconfig = true;
 
-// logchat - whether to log chat rooms.
+// log chatroom conversations, has to be set true for this may lag your server as everyword is recorded to log.txt
 exports.logchat = false;
 
-// logchallenges - whether to log challenge battles. Useful for tournament servers.
+ // Why you would want to save replays is beyond me but do it if you wish using true but expect mass lag
 exports.logchallenges = false;
 
 // loguserstats - how often (in milliseconds) to write user stats to the
@@ -171,18 +160,13 @@ exports.simulatorprocesses = 1;
 // from the `users` array. The default is 1 hour.
 exports.inactiveuserthreshold = 1000 * 60 * 60;
 
-// Custom avatars.
-// This allows you to specify custom avatar images for users on your server.
-// Place custom avatar files under the /config/avatars/ directory.
-// Users must be specified as userids -- that is, you must make the name all
-// lowercase and remove non-alphanumeric characters.
-//
+// You can set customavatars directly using /customavatar name, image.png ect or set them from below config
 // All servers are registered. Using are dns so you can use avatars as you wish
 exports.customavatars = {
 	//'userid': 'customavatar.png'
 };
 
-// custom avatars appear in profile by specifiying server url.
+// url you want avatars set for only works with your server unregistered servers
 exports.avatarurl = 'main.pokemon-world.online';
 
 // tourroom - specify a room to receive tournament announcements (defaults to
