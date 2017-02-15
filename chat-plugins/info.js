@@ -1054,50 +1054,16 @@ exports.commands = {
 	opensource: function (target, room, user) {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox(
-			"Pok&eacute;mon Showdown is open source:<br />" +
+			"Pok&eacute;mon World Online is open source:<br />" +
 			"- Language: JavaScript (Node.js)<br />" +
-			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown/commits/master\">What's new?</a><br />" +
-			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown\">Server source code</a><br />" +
-			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown-Client\">Client source code</a><br />" +
-			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown-Dex\">Dex source code</a>"
+			"- <a href=\"https://github.com/Pokemon-World/pokemon-world-server/commits/master\">What's new?</a><br />" +
+			"- <a href=\"https://github.com/Pokemon-World/pokemon-world-server\">Server source code</a><br />" +
+			"- Client Not Provided, Ask Mayhem (Client Setup: $100)<br />"
 		);
 	},
 	opensourcehelp: ["/opensource - Links to PS's source code repository.",
 		"!opensource - Show everyone that information. Requires: + % @ * # & ~"],
-
-	'!staff': true,
-	staff: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		this.sendReplyBox("<a href=\"https://www.smogon.com/sim/staff_list\">Pok&eacute;mon Showdown Staff List</a>");
-	},
-
-	'!forums': true,
-	forums: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		this.sendReplyBox("<a href=\"https://www.smogon.com/forums/forums/pok%C3%A9mon-showdown.209\">Pok&eacute;mon Showdown Forums</a>");
-	},
-
-	'!suggestions': true,
-	suggestions: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		this.sendReplyBox("<a href=\"https://www.smogon.com/forums/threads/3534365/\">Make a suggestion for Pok&eacute;mon Showdown</a>");
-	},
-
-	'!bugs': true,
-	bugreport: 'bugs',
-	bugs: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		if (room && room.battle) {
-			this.sendReplyBox("<center><button name=\"saveReplay\"><i class=\"fa fa-upload\"></i> Save Replay</button> &mdash; <a href=\"https://www.smogon.com/forums/threads/3520646/\">Questions</a> &mdash; <a href=\"https://www.smogon.com/forums/threads/3469932/\">Bug Reports</a></center>");
-		} else {
-			this.sendReplyBox(
-				"Have a replay showcasing a bug on Pok&eacute;mon Showdown?<br />" +
-				"- <a href=\"https://www.smogon.com/forums/threads/3520646/\">Questions</a><br />" +
-				"- <a href=\"https://www.smogon.com/forums/threads/3469932/\">Bug Reports</a>"
-			);
-		}
-	},
-
+	
 	'!avatars': true,
 	avatars: function (target, room, user) {
 		if (!this.runBroadcast()) return;
@@ -1118,33 +1084,6 @@ exports.commands = {
 	soundbutton: function (target, room, user) {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox(`<button name="openSounds" class="button"><i style="font-size: 16px; vertical-align: -1px" class="fa fa-volume-up"></i> Sound</button> (The Sound and Options buttons are at the top right, next to your username)`);
-	},
-
-	'!intro': true,
-	introduction: 'intro',
-	intro: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		this.sendReplyBox(
-			"New to competitive Pok&eacute;mon?<br />" +
-			"- <a href=\"https://www.smogon.com/forums/threads/3570628/#post-6774481\">Beginner's Guide to Pok&eacute;mon Showdown</a><br />" +
-			"- <a href=\"https://www.smogon.com/dp/articles/intro_comp_pokemon\">An introduction to competitive Pok&eacute;mon</a><br />" +
-			"- <a href=\"https://www.smogon.com/bw/articles/bw_tiers\">What do 'OU', 'UU', etc mean?</a><br />" +
-			"- <a href=\"https://www.smogon.com/xyhub/tiers\">What are the rules for each format? What is 'Sleep Clause'?</a>"
-		);
-	},
-	introhelp: ["/intro - Provides an introduction to competitive Pok\u00e9mon.",
-		"!intro - Show everyone that information. Requires: + % @ * # & ~"],
-
-	'!smogintro': true,
-	mentoring: 'smogintro',
-	smogonintro: 'smogintro',
-	smogintro: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		this.sendReplyBox(
-			"Welcome to Smogon's official simulator! The <a href=\"https://www.smogon.com/forums/forums/264\">Smogon Info / Intro Hub</a> can help you get integrated into the community.<br />" +
-			"- <a href=\"https://www.smogon.com/forums/threads/3526346\">Useful Smogon Info</a><br />" +
-			"- <a href=\"https://www.smogon.com/forums/threads/3498332\">Tiering FAQ</a><br />"
-		);
 	},
 
 	'!calc': true,
