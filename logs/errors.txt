@@ -1,1 +1,1 @@
-# Base error document
+#Reports logs
