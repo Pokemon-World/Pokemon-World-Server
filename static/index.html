@@ -1,5 +1,5 @@
 <!DOCTYPE html>
 <script>
-var suffix = (document.location.port != '8000' ? '-' + (document.location.port || '80') : '');
+var suffix = (document.location.port != '8000' ? '-' + (document.location.port || '80') : ''); // important do not change
 document.location.replace('http://' + document.location.hostname + suffix + '.psim.online' + document.location.pathname);
 </script>
