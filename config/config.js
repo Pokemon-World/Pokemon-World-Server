@@ -22,7 +22,8 @@ exports.potd = '';
 //   crash, so this option is provided
 exports.crashguard = false;
 
-// login server main key for are servers and main...
+// This is the official login server key for PWO Side servers using main connection
+// Do not change this as there isn't another algo right now
 exports.loginserver = 'http://main.pokemon-world.online/';
 exports.loginserverkeyalgo = "RSA-SHA1";
 exports.loginserverpublickeyid = 4;
