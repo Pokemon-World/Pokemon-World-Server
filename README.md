@@ -1,35 +1,31 @@
-- Pokémon World Online - Server Basic Setup 
+How to setup a fast client requires nothing but this small setup guide below
 
-Welcome to our README.md ~ Note that currently most usernames are free without a password, Only less than 50 accounts have been registered.
+1 download node.js
+2 download these client files (extract to desktop)
+3 open cmd.exe
+4 cd folder
+5 npm install --client
+6 node app.js
+....
+Done
+....
+Navigate to http://localhost.psim.online/ (localhost only)
 
-This guide will help you on setting up you're very own pokemon world online server.
+If you want freinds to join your client you will need to expose port 8000
+If you want to get your client registered for example http://myserver.psim.online/ please go to http://main.pokemon-world.online/ and ask an admin to register your client, after registration your client will appear on are serverlist hear it will automatically be assigned once registering is complete http://pokemon-world.online/servers/
 
-................................................................................................
-Requirements: 'Node.js command prompt' ~ https://nodejs.org/en/ ~ Download for Windows (x86) Latest-Version: 6.9.2 Supported: 5.7.0 at the least.
+Next you can make yourself owner on your server by going to config/usergroups.csv
+Next YOURNAME,~ save file, then restart your client done
 
-( Step-1 ) your computers folder path
+you can use commands such as:
 
-> cd C:\Users\%Username%\Downloads\pokemon-world-server-master\pokemon-world-server (default path)
+/customavatar YOURNAME, IMG.png
+/auth
+/help
+ and all commands you already know
+ 
+ 
+  Your client is now up :)
 
-( Step-2 ) Press Win + R (Win: 4 Flags Key Between Ctrl + Alt) and type cmd.exe in the Run Box
-> cd current_server_path (From Step-1)
 
-> npm install --server
 
-( Step-3 ) Starting up your server on your end (localhost.psim.online) for local testing, Just search "what is my IP" for global IP.
-
-> node app.js OR node app (.js extention is optional)
-
-Let's help you open a port so you're freinds can join you're server heres an easy to help instruction below!
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-README GUIDE: http://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/
-YOUTUBE GUIDE: https://www.youtube.com/results?search_query=how-to-forward-ports-on-your-router
-PORT-CHECK See if the ports 'open' or 'closed' : http://www.yougetsignal.com/tools/open-ports/ - Can also get IP here.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Great. After doing the above processes... You want to become owner right follow steps below
-
-Open your server files, go to config, add a file called usergroups.csv, Add in the file ``YOURNAME,~`` to grant you admin.
-
-Once done save the file and restart the server, Job done you can now run a server with us.
