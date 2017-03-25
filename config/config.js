@@ -74,7 +74,7 @@ exports.reportjoins = true;
 exports.reportjoinsperiod = 0;
 
 // Show ongoing battles directly in chat, However it doesn't show messages of message of ending battles, for bandwidth reasons
-exports.reportbattles = true;
+exports.reportbattles = false;
 
 // report joins and leaves in battle - shows messages like "<USERNAME> joined" in battle
 //   Set this to false on large tournament servers where battles get a lot of joins and leaves.
