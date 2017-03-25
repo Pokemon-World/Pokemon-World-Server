@@ -9,10 +9,10 @@ const AVATAR_PATH = path.join(__dirname, '../config/avatars/');
 function download_image(image_url, name, extension) {
 	request
 		.get(image_url)
-		.on('error', function (err) {
+		.on('error', err => {
 			console.error(err);
 		})
-		.on('response', function (response) {
+		.on('response', response => {
 			if (response.statusCode !== 200) return;
 			const type = response.headers['content-type'].split('/');
 			if (type[0] !== 'image') return;
@@ -22,13 +22,13 @@ function download_image(image_url, name, extension) {
 }
 
 function load_custom_avatars() {
-	fs.readdir(AVATAR_PATH, function (err, files) {
+	fs.readdir(AVATAR_PATH, (err, files) => {
 		if (!files) files = [];
 		files
-			.filter(function (file) {
+			.filter(file => {
 				return ['.jpg', '.png', '.gif'].indexOf(path.extname(file)) >= 0;
 			})
-			.forEach(function (file) {
+			.forEach(file => {
 				const name = path.basename(file, path.extname(file));
 				Config.customavatars[name] = file;
 			});
@@ -36,6 +36,26 @@ function load_custom_avatars() {
 }
 
 load_custom_avatars();
+
+function remove_custom_avatar(userid) {
+	return new Promise((resolve, reject) => {
+		if (!Config.customavatars[userid]) return resolve(); // nothing to do
+
+		let image = Config.customavatars[userid];
+		fs.unlink(AVATAR_PATH + image, err => {
+			if (err && err.code === 'ENOENT') {
+				reject();
+			} else if (err) {
+				console.error(err);
+				reject();
+			} else {
+				// no problems!
+				delete Config.customavatars[userid]; // delete from Config object
+				resolve();
+			}
+		});
+	})
+}
 
 exports.commands = {
 	customavatar: {
@@ -47,9 +67,6 @@ exports.commands = {
 			if (parts.length < 2) return this.parse('/help customavatar');
 			const name = toId(parts[0]);
 
-			const userImage = Config.customavatars[name];
-			if (userImage) delete Config.customavatars[name];
-
 			let image_url = parts[1];
 			if (image_url.match(/^https?:\/\//i)) image_url = 'http://' + image_url;
 			const ext = path.extname(image_url);
@@ -58,12 +75,19 @@ exports.commands = {
 			if (['.jpg', '.png', '.gif'].indexOf(ext) < 0) {
 				return this.errorReply("Image url must have .jpg, .png, or .gif extension.");
 			}
+			remove_custom_avatar(name)
+				.then(() => {
+					Config.customavatars[name] = name + ext;
 
-			Config.customavatars[name] = name + ext;
-
-			download_image(image_url, name, ext);
-			this.sendReply(parts[0] + "'s avatar has been set.");
-			Users.get(name).popup(user.name + " set your custom avatar. Refresh your page if you don\'t see it.");
+					download_image(image_url, name, ext);
+					this.sendReply(parts[0] + "'s avatar has been set.");
+					let targetUser = Users.get(name);
+					if (targetUser) {
+						targetUser.avatar = name + ext; // update the avatar in the user's user object for more immediate results.
+						targetUser.popup(user.name + " has set your custom avatar. Refresh your page if you don\'t see it.");
+					}
+				})
+				.catch(() => this.errorReply("Cannot remove the customavatar before setting it."));
 		},
 
 		delete: function (target, room, user) {
@@ -76,16 +100,11 @@ exports.commands = {
 				return this.errorReply("This user does not have a custom avatar");
 			}
 
-			delete Config.customavatars[userid];
-
-			fs.unlink(AVATAR_PATH + image, function (err) {
-				if (err && err.code === 'ENOENT') {
-					this.errorReply("This user's avatar does not exist.");
-				} else if (err) {
-					console.error(err);
-				}
-				this.sendReply("This user's avatar has been successfully removed.");
-			}.bind(this));
+			remove_custom_avatar(userid)
+				.then(() => {
+					this.sendReply("Removed " + userid + "'s custom avatar.");
+				})
+				.catch(() => this.errorReply("Unable to remove the customavatar before setting it."));
 		},
 
 		'': 'help',
